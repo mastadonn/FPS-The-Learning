@@ -79,11 +79,17 @@ public class QM_CharController : MonoBehaviour {
 //			}
 //		}
 
-		if (Input.GetButtonDown("Jump")) { // jump pressed:
-			ray = new Ray(myTransform.position, myTransform.forward);
-			if (isGrounded) { // no: if grounded, jump up
-				rb.velocity += jumpSpeed * myNormal;
-
+//s		if (Input.GetButtonDown("Jump")) { // jump pressed:
+//			ray = new Ray(myTransform.position, myTransform.forward);
+//			if (isGrounded) { // no: if grounded, jump up
+//				rb.velocity += jumpSpeed * myNormal;
+//
+//			}
+//		}
+		if (Input.GetButtonDown("Jump")) {
+			if (isGrounded) {
+//				rb.AddForce(transform.up * jumpSpeed);
+				rb.AddForce(transform.up * jumpSpeed, ForceMode.VelocityChange);
 			}
 		}
 
